@@ -11,6 +11,54 @@ GtkWidget *windows; // Variable pour la fenetre
 GtkWidget *windows_settings; // Variable pour la fenetre
 GtkWidget *windows_game;
 GtkWidget *windows_result;
+GtkWidget *windows_stack0;
+GtkLabel *label_firstname;
+
+GtkLabel *label_name;
+GtkLabel *label_course0;
+GtkLabel *label_course1;
+GtkLabel *label_course2;
+GtkLabel *label_course3;
+GtkLabel *label_course4;
+GtkLabel *label_course5;
+GtkLabel *label_course6;
+GtkLabel *label_course7;
+GtkLabel *label_course8;
+GtkLabel *label_course9;
+GtkLabel *label_course10;
+GtkLabel *label_course11;
+GtkLabel *label_course12;
+GtkLabel *label_course13;
+
+GtkLabel *label_mark0;
+GtkLabel *label_mark1;
+GtkLabel *label_mark2;
+GtkLabel *label_mark3;
+GtkLabel *label_mark4;
+GtkLabel *label_mark5;
+GtkLabel *label_mark6;
+GtkLabel *label_mark7;
+GtkLabel *label_mark8;
+GtkLabel *label_mark9;
+GtkLabel *label_mark10;
+GtkLabel *label_mark11;
+GtkLabel *label_mark12;
+GtkLabel *label_mark13;
+
+
+
+
+struct json_object *parsed_json;
+struct json_object *firstname;
+struct json_object *name;
+struct json_object *photo;
+struct json_object *course;
+struct json_object *grades;
+struct json_object *teacher_first_name;
+struct json_object *teacher_last_name;
+struct json_object *value;
+struct json_object *value1;
+struct json_object *value_in_1;
 
 char *json_received;
 
@@ -150,17 +198,7 @@ int main(int argc, char *argv[]) {
     curl_download_json_to_buffer("http://146.59.154.231/api_myges/index.php");
 
     // Parser JSON
-    struct json_object *parsed_json;
-    struct json_object *firstname;
-    struct json_object *name;
-    struct json_object *photo;
-    struct json_object *course;
-    struct json_object *grades;
-    struct json_object *teacher_first_name;
-    struct json_object *teacher_last_name;
-    struct json_object *value;
-    struct json_object *value1;
-    struct json_object *value_in_1;
+
 
 
     parsed_json = json_tokener_parse(json_received);
@@ -242,6 +280,124 @@ void button_game(){
 
     windows_game = GTK_WIDGET(gtk_builder_get_object(builder, "windows_game"));
     gtk_window_set_default_size(GTK_WINDOW(windows_game), 1920, 1080);
+
+    label_firstname = GTK_LABEL(gtk_builder_get_object(builder, "surname_student"));
+    gtk_label_set_text(label_firstname, json_object_get_string(firstname));
+
+    label_name = GTK_LABEL(gtk_builder_get_object(builder, "name_student"));
+    gtk_label_set_text(label_name, json_object_get_string(name));
+
+    windows_stack0 = GTK_WIDGET(gtk_builder_get_object(builder, "windows_stack0"));
+    gtk_window_set_title(GTK_WINDOW(windows_stack0), json_object_get_string(name));
+
+    for (int y=0; y<13; y++){
+        value_in_1 = json_object_array_get_idx(value1, y);
+
+        json_object_object_get_ex(value_in_1, "course", &course);
+        json_object_object_get_ex(value_in_1, "grades", &grades);
+        json_object_object_get_ex(value_in_1, "teacher_first_name", &teacher_first_name);
+        json_object_object_get_ex(value_in_1, "teacher_last_name", &teacher_last_name);
+
+        switch (y) {
+            case 0:
+                label_course0 = GTK_LABEL(gtk_builder_get_object(builder, "label_course0"));
+                gtk_label_set_text(label_course0, json_object_get_string(course));
+
+                label_mark0 = GTK_LABEL(gtk_builder_get_object(builder, "label_mark0"));
+                gtk_label_set_text(label_mark0, json_object_get_string(grades));
+
+            case 1:
+                label_course1 = GTK_LABEL(gtk_builder_get_object(builder, "label_course1"));
+                gtk_label_set_text(label_course1, json_object_get_string(course));
+
+                label_mark1 = GTK_LABEL(gtk_builder_get_object(builder, "label_mark1"));
+                gtk_label_set_text(label_mark1, json_object_get_string(grades));
+
+            case 2:
+                label_course2 = GTK_LABEL(gtk_builder_get_object(builder, "label_course2"));
+                gtk_label_set_text(label_course2, json_object_get_string(course));
+
+                label_mark2 = GTK_LABEL(gtk_builder_get_object(builder, "label_mark2"));
+                gtk_label_set_text(label_mark2, json_object_get_string(grades));
+            case 3:
+                label_course3 = GTK_LABEL(gtk_builder_get_object(builder, "label_course3"));
+                gtk_label_set_text(label_course3, json_object_get_string(course));
+
+                label_mark3 = GTK_LABEL(gtk_builder_get_object(builder, "label_mark3"));
+                gtk_label_set_text(label_mark3, json_object_get_string(grades));
+
+            case 4:
+                label_course4 = GTK_LABEL(gtk_builder_get_object(builder, "label_course4"));
+                gtk_label_set_text(label_course4, json_object_get_string(course));
+
+                label_mark4 = GTK_LABEL(gtk_builder_get_object(builder, "label_mark4"));
+                gtk_label_set_text(label_mark4, json_object_get_string(grades));
+
+            case 5:
+                label_course5 = GTK_LABEL(gtk_builder_get_object(builder, "label_course5"));
+                gtk_label_set_text(label_course5, json_object_get_string(course));
+
+                label_mark5 = GTK_LABEL(gtk_builder_get_object(builder, "label_mark5"));
+                gtk_label_set_text(label_mark5, json_object_get_string(grades));
+
+            case 6:
+                label_course6 = GTK_LABEL(gtk_builder_get_object(builder, "label_course6"));
+                gtk_label_set_text(label_course6, json_object_get_string(course));
+
+                label_mark6 = GTK_LABEL(gtk_builder_get_object(builder, "label_mark6"));
+                gtk_label_set_text(label_mark6, json_object_get_string(grades));
+
+            case 7:
+                label_course7 = GTK_LABEL(gtk_builder_get_object(builder, "label_course7"));
+                gtk_label_set_text(label_course7, json_object_get_string(course));
+
+                label_mark7 = GTK_LABEL(gtk_builder_get_object(builder, "label_mark7"));
+                gtk_label_set_text(label_mark7, json_object_get_string(grades));
+
+            case 8:
+                label_course8 = GTK_LABEL(gtk_builder_get_object(builder, "label_course8"));
+                gtk_label_set_text(label_course8, json_object_get_string(course));
+
+                label_mark8 = GTK_LABEL(gtk_builder_get_object(builder, "label_mark8"));
+                gtk_label_set_text(label_mark8, json_object_get_string(grades));
+
+            case 9:
+                label_course9 = GTK_LABEL(gtk_builder_get_object(builder, "label_course9"));
+                gtk_label_set_text(label_course9, json_object_get_string(course));
+
+                label_mark9 = GTK_LABEL(gtk_builder_get_object(builder, "label_mark9"));
+                gtk_label_set_text(label_mark9, json_object_get_string(grades));
+
+            case 10:
+                label_course10 = GTK_LABEL(gtk_builder_get_object(builder, "label_course10"));
+                gtk_label_set_text(label_course10, json_object_get_string(course));
+
+                label_mark10 = GTK_LABEL(gtk_builder_get_object(builder, "label_mark10"));
+                gtk_label_set_text(label_mark10, json_object_get_string(grades));
+
+            case 11:
+                label_course11 = GTK_LABEL(gtk_builder_get_object(builder, "label_course11"));
+                gtk_label_set_text(label_course11, json_object_get_string(course));
+
+                label_mark11 = GTK_LABEL(gtk_builder_get_object(builder, "label_mark11"));
+                gtk_label_set_text(label_mark11, json_object_get_string(grades));
+
+            case 12:
+                label_course12 = GTK_LABEL(gtk_builder_get_object(builder, "label_course12"));
+                gtk_label_set_text(label_course12, json_object_get_string(course));
+
+                label_mark12 = GTK_LABEL(gtk_builder_get_object(builder, "label_mark12"));
+                gtk_label_set_text(label_mark12, json_object_get_string(grades));
+
+            case 13:
+                label_course13 = GTK_LABEL(gtk_builder_get_object(builder, "label_course13"));
+                gtk_label_set_text(label_course13, json_object_get_string(course));
+
+                label_mark13 = GTK_LABEL(gtk_builder_get_object(builder, "label_mark13"));
+                gtk_label_set_text(label_mark13, json_object_get_string(grades));
+        }
+    }
+
     g_signal_connect(windows_game, "destroy", G_CALLBACK(gtk_main_quit), NULL);
     gtk_builder_connect_signals(builder, NULL);
     gtk_widget_show_all(windows_game);
@@ -258,4 +414,6 @@ void button_result(){
     gtk_builder_connect_signals(builder, NULL);
     gtk_widget_show_all(windows_result);
 }
+
+
 
