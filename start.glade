@@ -18,6 +18,9 @@
           <placeholder/>
         </child>
         <child>
+          <placeholder/>
+        </child>
+        <child>
           <object class="GtkButton" id="launch">
             <property name="label" translatable="yes">Lancer une partie</property>
             <property name="visible">True</property>
@@ -28,25 +31,6 @@
             <property name="margin_top">10</property>
             <property name="margin_bottom">10</property>
             <signal name="clicked" handler="button_game" swapped="no"/>
-          </object>
-          <packing>
-            <property name="expand">True</property>
-            <property name="fill">False</property>
-            <property name="position">1</property>
-          </packing>
-        </child>
-        <child>
-          <object class="GtkButton" id="settings">
-            <property name="label" translatable="yes">Paramètres</property>
-            <property name="visible">True</property>
-            <property name="can_focus">True</property>
-            <property name="receives_default">True</property>
-            <property name="margin_left">750</property>
-            <property name="margin_right">750</property>
-            <property name="margin_top">10</property>
-            <property name="margin_bottom">10</property>
-            <signal name="activate" handler="button_settings" swapped="no"/>
-            <signal name="clicked" handler="button_settings" swapped="no"/>
           </object>
           <packing>
             <property name="expand">True</property>

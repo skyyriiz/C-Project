@@ -721,6 +721,21 @@
                     <property name="y">798</property>
                   </packing>
                 </child>
+                <child>
+                  <object class="GtkButton" id="button_end">
+                    <property name="label" translatable="yes">FIN</property>
+                    <property name="width_request">195</property>
+                    <property name="height_request">79</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">True</property>
+                    <property name="receives_default">True</property>
+                    <signal name="clicked" handler="button_end" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="x">1405</property>
+                    <property name="y">127</property>
+                  </packing>
+                </child>
               </object>
               <packing>
                 <property name="name">page0</property>
@@ -762,7 +777,7 @@
                         <property name="label" translatable="yes">PRUDHOMME</property>
                       </object>
                       <packing>
-                        <property name="x">306</property>
+                        <property name="x">311</property>
                         <property name="y">171</property>
                       </packing>
                     </child>
@@ -775,8 +790,8 @@
                         <property name="label" translatable="yes">Aurélien</property>
                       </object>
                       <packing>
-                        <property name="x">304</property>
-                        <property name="y">192</property>
+                        <property name="x">310</property>
+                        <property name="y">193</property>
                       </packing>
                     </child>
                     <child>
@@ -790,71 +805,6 @@
                       <packing>
                         <property name="x">303</property>
                         <property name="y">251</property>
-                      </packing>
-                    </child>
-                    <child>
-                      <object class="GtkFixed" id="windows_result1">
-                        <property name="width_request">32</property>
-                        <property name="height_request">32</property>
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <child>
-                          <object class="GtkEntry">
-                            <property name="width_request">1366</property>
-                            <property name="height_request">250</property>
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="placeholder_text" translatable="yes">Mettre une appréciation à l'élève...</property>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="GtkButton">
-                            <property name="label" translatable="yes">Passage</property>
-                            <property name="width_request">250</property>
-                            <property name="height_request">79</property>
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="receives_default">True</property>
-                            <signal name="clicked" handler="button_result1" swapped="no"/>
-                          </object>
-                          <packing>
-                            <property name="x">1400</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkButton">
-                            <property name="label" translatable="yes">Rattrapage</property>
-                            <property name="width_request">250</property>
-                            <property name="height_request">79</property>
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="receives_default">True</property>
-                            <signal name="clicked" handler="button_result1" swapped="no"/>
-                          </object>
-                          <packing>
-                            <property name="x">1400</property>
-                            <property name="y">84</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkButton">
-                            <property name="label" translatable="yes">Redoublement</property>
-                            <property name="width_request">250</property>
-                            <property name="height_request">79</property>
-                            <property name="visible">True</property>
-                            <property name="can_focus">True</property>
-                            <property name="receives_default">True</property>
-                            <signal name="clicked" handler="button_result1" swapped="no"/>
-                          </object>
-                          <packing>
-                            <property name="x">1400</property>
-                            <property name="y">167</property>
-                          </packing>
-                        </child>
-                      </object>
-                      <packing>
-                        <property name="x">54</property>
-                        <property name="y">798</property>
                       </packing>
                     </child>
                     <child>
@@ -1426,6 +1376,83 @@
                         <property name="y">407</property>
                       </packing>
                     </child>
+                    <child>
+                      <object class="GtkFixed" id="windows_result1">
+                        <property name="width_request">32</property>
+                        <property name="height_request">32</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkEntry">
+                            <property name="width_request">1366</property>
+                            <property name="height_request">250</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="placeholder_text" translatable="yes">Mettre une appréciation à l'élève...</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="button_result3">
+                            <property name="label" translatable="yes">Passage</property>
+                            <property name="width_request">250</property>
+                            <property name="height_request">79</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                          </object>
+                          <packing>
+                            <property name="x">1400</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="button_result4">
+                            <property name="label" translatable="yes">Rattrapage</property>
+                            <property name="width_request">250</property>
+                            <property name="height_request">79</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                          </object>
+                          <packing>
+                            <property name="x">1400</property>
+                            <property name="y">84</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="button_result5">
+                            <property name="label" translatable="yes">Redoublement</property>
+                            <property name="width_request">250</property>
+                            <property name="height_request">79</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                          </object>
+                          <packing>
+                            <property name="x">1400</property>
+                            <property name="y">167</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="x">54</property>
+                        <property name="y">798</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_end1">
+                        <property name="label" translatable="yes">FIN</property>
+                        <property name="width_request">195</property>
+                        <property name="height_request">79</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <signal name="clicked" handler="button_end" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">1405</property>
+                        <property name="y">127</property>
+                      </packing>
+                    </child>
                   </object>
                 </child>
               </object>
@@ -1482,8 +1509,8 @@
                         <property name="label" translatable="yes">Valentin</property>
                       </object>
                       <packing>
-                        <property name="x">307</property>
-                        <property name="y">192</property>
+                        <property name="x">310</property>
+                        <property name="y">193</property>
                       </packing>
                     </child>
                     <child>
@@ -2084,28 +2111,26 @@
                           </object>
                         </child>
                         <child>
-                          <object class="GtkButton">
+                          <object class="GtkButton" id="button_result6">
                             <property name="label" translatable="yes">Passage</property>
                             <property name="width_request">250</property>
                             <property name="height_request">79</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
-                            <signal name="clicked" handler="button_result2" swapped="no"/>
                           </object>
                           <packing>
                             <property name="x">1400</property>
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkButton">
+                          <object class="GtkButton" id="button_result7">
                             <property name="label" translatable="yes">Rattrapage</property>
                             <property name="width_request">250</property>
                             <property name="height_request">79</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
-                            <signal name="clicked" handler="button_result2" swapped="no"/>
                           </object>
                           <packing>
                             <property name="x">1400</property>
@@ -2113,14 +2138,13 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkButton">
+                          <object class="GtkButton" id="button_result8">
                             <property name="label" translatable="yes">Redoublement</property>
                             <property name="width_request">250</property>
                             <property name="height_request">79</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">True</property>
-                            <signal name="clicked" handler="button_result2" swapped="no"/>
                           </object>
                           <packing>
                             <property name="x">1400</property>
@@ -2131,6 +2155,21 @@
                       <packing>
                         <property name="x">54</property>
                         <property name="y">798</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="button_end2">
+                        <property name="label" translatable="yes">FIN</property>
+                        <property name="width_request">195</property>
+                        <property name="height_request">79</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">True</property>
+                        <property name="receives_default">True</property>
+                        <signal name="clicked" handler="button_end" swapped="no"/>
+                      </object>
+                      <packing>
+                        <property name="x">1405</property>
+                        <property name="y">127</property>
                       </packing>
                     </child>
                   </object>
