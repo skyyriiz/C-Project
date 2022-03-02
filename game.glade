@@ -3,6 +3,8 @@
 <interface>
   <requires lib="gtk+" version="3.20"/>
   <object class="GtkWindow" id="windows_game">
+    <property name="width_request">1920</property>
+    <property name="height_request">1080</property>
     <property name="can_focus">False</property>
     <property name="default_width">1920</property>
     <property name="default_height">1080</property>
@@ -18,21 +20,25 @@
         <property name="can_focus">False</property>
         <child>
           <object class="GtkStack" id="stack">
-            <property name="width_request">1620</property>
+            <property name="width_request">1920</property>
             <property name="height_request">1080</property>
             <property name="visible">True</property>
             <property name="can_focus">False</property>
+            <property name="receives_default">True</property>
+            <property name="transition_type">crossfade</property>
+            <property name="interpolate_size">True</property>
             <child>
-              <object class="GtkFixed">
+              <object class="GtkFixed" id="windows_stack0">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <property name="resize_mode">immediate</property>
                 <child>
                   <object class="GtkImage">
                     <property name="width_request">231</property>
                     <property name="height_request">260</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="pixbuf">img/akame_mini.jpg</property>
+                    <property name="pixbuf">img/mike.jpg</property>
                     <property name="icon_size">2</property>
                   </object>
                   <packing>
@@ -59,10 +65,12 @@
                     <property name="height_request">80</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">PRENOM</property>
+                    <property name="label" translatable="yes">Prenom</property>
+                    <signal name="activate-current-link" handler="print" swapped="no"/>
+                    <signal name="activate-link" handler="print" swapped="no"/>
                   </object>
                   <packing>
-                    <property name="x">318</property>
+                    <property name="x">310</property>
                     <property name="y">193</property>
                   </packing>
                 </child>
@@ -72,11 +80,11 @@
                     <property name="height_request">80</property>
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="label" translatable="yes">Classe</property>
+                    <property name="label" translatable="yes">2ESGI2</property>
                   </object>
                   <packing>
-                    <property name="x">309</property>
-                    <property name="y">250</property>
+                    <property name="x">303</property>
+                    <property name="y">251</property>
                   </packing>
                 </child>
                 <child>
@@ -92,19 +100,21 @@
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <child>
-                          <object class="GtkLabel">
-                            <property name="width_request">112</property>
-                            <property name="height_request">40</property>
+                          <object class="GtkLabel" id="label_course0">
+                            <property name="width_request">125</property>
+                            <property name="height_request">100</property>
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="label" translatable="yes">Matiere</property>
+                            <property name="justify">center</property>
+                            <property name="wrap">True</property>
                             <attributes>
                               <attribute name="underline" value="True"/>
                             </attributes>
                           </object>
                         </child>
                         <child>
-                          <object class="GtkLabel">
+                          <object class="GtkLabel" id="label_mark0">
                             <property name="width_request">112</property>
                             <property name="height_request">331</property>
                             <property name="visible">True</property>
@@ -127,19 +137,21 @@
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <child>
-                          <object class="GtkLabel">
-                            <property name="width_request">112</property>
-                            <property name="height_request">40</property>
+                          <object class="GtkLabel" id="label_course1">
+                            <property name="width_request">125</property>
+                            <property name="height_request">100</property>
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="label" translatable="yes">Matiere</property>
+                            <property name="justify">center</property>
+                            <property name="wrap">True</property>
                             <attributes>
                               <attribute name="underline" value="True"/>
                             </attributes>
                           </object>
                         </child>
                         <child>
-                          <object class="GtkLabel">
+                          <object class="GtkLabel" id="label_mark1">
                             <property name="width_request">112</property>
                             <property name="height_request">331</property>
                             <property name="visible">True</property>
@@ -165,19 +177,21 @@
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <child>
-                          <object class="GtkLabel">
-                            <property name="width_request">112</property>
-                            <property name="height_request">40</property>
+                          <object class="GtkLabel" id="label_course2">
+                            <property name="width_request">125</property>
+                            <property name="height_request">100</property>
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="label" translatable="yes">Matiere</property>
+                            <property name="justify">center</property>
+                            <property name="wrap">True</property>
                             <attributes>
                               <attribute name="underline" value="True"/>
                             </attributes>
                           </object>
                         </child>
                         <child>
-                          <object class="GtkLabel">
+                          <object class="GtkLabel" id="label_mark2">
                             <property name="width_request">112</property>
                             <property name="height_request">331</property>
                             <property name="visible">True</property>
@@ -203,19 +217,21 @@
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <child>
-                          <object class="GtkLabel">
-                            <property name="width_request">112</property>
-                            <property name="height_request">40</property>
+                          <object class="GtkLabel" id="label_course3">
+                            <property name="width_request">120</property>
+                            <property name="height_request">100</property>
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="label" translatable="yes">Matiere</property>
+                            <property name="justify">center</property>
+                            <property name="wrap">True</property>
                             <attributes>
                               <attribute name="underline" value="True"/>
                             </attributes>
                           </object>
                         </child>
                         <child>
-                          <object class="GtkLabel">
+                          <object class="GtkLabel" id="label_mark3">
                             <property name="width_request">112</property>
                             <property name="height_request">331</property>
                             <property name="visible">True</property>
@@ -241,19 +257,21 @@
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <child>
-                          <object class="GtkLabel">
-                            <property name="width_request">112</property>
-                            <property name="height_request">40</property>
+                          <object class="GtkLabel" id="label_course4">
+                            <property name="width_request">125</property>
+                            <property name="height_request">100</property>
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="label" translatable="yes">Matiere</property>
+                            <property name="justify">center</property>
+                            <property name="wrap">True</property>
                             <attributes>
                               <attribute name="underline" value="True"/>
                             </attributes>
                           </object>
                         </child>
                         <child>
-                          <object class="GtkLabel">
+                          <object class="GtkLabel" id="label_mark4">
                             <property name="width_request">112</property>
                             <property name="height_request">331</property>
                             <property name="visible">True</property>
@@ -279,19 +297,21 @@
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <child>
-                          <object class="GtkLabel">
-                            <property name="width_request">112</property>
-                            <property name="height_request">40</property>
+                          <object class="GtkLabel" id="label_course5">
+                            <property name="width_request">120</property>
+                            <property name="height_request">100</property>
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="label" translatable="yes">Matiere</property>
+                            <property name="justify">center</property>
+                            <property name="wrap">True</property>
                             <attributes>
                               <attribute name="underline" value="True"/>
                             </attributes>
                           </object>
                         </child>
                         <child>
-                          <object class="GtkLabel">
+                          <object class="GtkLabel" id="label_mark5">
                             <property name="width_request">112</property>
                             <property name="height_request">331</property>
                             <property name="visible">True</property>
@@ -317,19 +337,21 @@
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <child>
-                          <object class="GtkLabel">
-                            <property name="width_request">112</property>
-                            <property name="height_request">40</property>
+                          <object class="GtkLabel" id="label_course6">
+                            <property name="width_request">120</property>
+                            <property name="height_request">100</property>
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="label" translatable="yes">Matiere</property>
+                            <property name="justify">center</property>
+                            <property name="wrap">True</property>
                             <attributes>
                               <attribute name="underline" value="True"/>
                             </attributes>
                           </object>
                         </child>
                         <child>
-                          <object class="GtkLabel">
+                          <object class="GtkLabel" id="label_mark6">
                             <property name="width_request">112</property>
                             <property name="height_request">331</property>
                             <property name="visible">True</property>
@@ -355,19 +377,21 @@
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <child>
-                          <object class="GtkLabel">
-                            <property name="width_request">112</property>
-                            <property name="height_request">40</property>
+                          <object class="GtkLabel" id="label_course7">
+                            <property name="width_request">120</property>
+                            <property name="height_request">100</property>
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="label" translatable="yes">Matiere</property>
+                            <property name="justify">center</property>
+                            <property name="wrap">True</property>
                             <attributes>
                               <attribute name="underline" value="True"/>
                             </attributes>
                           </object>
                         </child>
                         <child>
-                          <object class="GtkLabel">
+                          <object class="GtkLabel" id="label_mark7">
                             <property name="width_request">112</property>
                             <property name="height_request">331</property>
                             <property name="visible">True</property>
@@ -393,19 +417,21 @@
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <child>
-                          <object class="GtkLabel">
-                            <property name="width_request">112</property>
-                            <property name="height_request">40</property>
+                          <object class="GtkLabel" id="label_course8">
+                            <property name="width_request">120</property>
+                            <property name="height_request">100</property>
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="label" translatable="yes">Matiere</property>
+                            <property name="justify">center</property>
+                            <property name="wrap">True</property>
                             <attributes>
                               <attribute name="underline" value="True"/>
                             </attributes>
                           </object>
                         </child>
                         <child>
-                          <object class="GtkLabel">
+                          <object class="GtkLabel" id="label_mark8">
                             <property name="width_request">112</property>
                             <property name="height_request">331</property>
                             <property name="visible">True</property>
@@ -431,19 +457,21 @@
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <child>
-                          <object class="GtkLabel">
-                            <property name="width_request">112</property>
-                            <property name="height_request">40</property>
+                          <object class="GtkLabel" id="label_course9">
+                            <property name="width_request">120</property>
+                            <property name="height_request">100</property>
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="label" translatable="yes">Matiere</property>
+                            <property name="justify">center</property>
+                            <property name="wrap">True</property>
                             <attributes>
                               <attribute name="underline" value="True"/>
                             </attributes>
                           </object>
                         </child>
                         <child>
-                          <object class="GtkLabel">
+                          <object class="GtkLabel" id="label_mark9">
                             <property name="width_request">112</property>
                             <property name="height_request">331</property>
                             <property name="visible">True</property>
@@ -469,19 +497,21 @@
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <child>
-                          <object class="GtkLabel">
-                            <property name="width_request">112</property>
-                            <property name="height_request">40</property>
+                          <object class="GtkLabel" id="label_course10">
+                            <property name="width_request">120</property>
+                            <property name="height_request">100</property>
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="label" translatable="yes">Matiere</property>
+                            <property name="justify">center</property>
+                            <property name="wrap">True</property>
                             <attributes>
                               <attribute name="underline" value="True"/>
                             </attributes>
                           </object>
                         </child>
                         <child>
-                          <object class="GtkLabel">
+                          <object class="GtkLabel" id="label_mark10">
                             <property name="width_request">112</property>
                             <property name="height_request">331</property>
                             <property name="visible">True</property>
@@ -507,19 +537,21 @@
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <child>
-                          <object class="GtkLabel">
-                            <property name="width_request">112</property>
-                            <property name="height_request">40</property>
+                          <object class="GtkLabel" id="label_course11">
+                            <property name="width_request">120</property>
+                            <property name="height_request">100</property>
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="label" translatable="yes">Matiere</property>
+                            <property name="justify">center</property>
+                            <property name="wrap">True</property>
                             <attributes>
                               <attribute name="underline" value="True"/>
                             </attributes>
                           </object>
                         </child>
                         <child>
-                          <object class="GtkLabel">
+                          <object class="GtkLabel" id="label_mark11">
                             <property name="width_request">112</property>
                             <property name="height_request">331</property>
                             <property name="visible">True</property>
@@ -545,19 +577,21 @@
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <child>
-                          <object class="GtkLabel">
-                            <property name="width_request">112</property>
-                            <property name="height_request">40</property>
+                          <object class="GtkLabel" id="label_course12">
+                            <property name="width_request">120</property>
+                            <property name="height_request">100</property>
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="label" translatable="yes">Matiere</property>
+                            <property name="justify">center</property>
+                            <property name="wrap">True</property>
                             <attributes>
                               <attribute name="underline" value="True"/>
                             </attributes>
                           </object>
                         </child>
                         <child>
-                          <object class="GtkLabel">
+                          <object class="GtkLabel" id="label_mark12">
                             <property name="width_request">112</property>
                             <property name="height_request">331</property>
                             <property name="visible">True</property>
@@ -583,19 +617,21 @@
                         <property name="visible">True</property>
                         <property name="can_focus">False</property>
                         <child>
-                          <object class="GtkLabel">
-                            <property name="width_request">112</property>
-                            <property name="height_request">40</property>
+                          <object class="GtkLabel" id="label_course13">
+                            <property name="width_request">120</property>
+                            <property name="height_request">100</property>
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
                             <property name="label" translatable="yes">Matiere</property>
+                            <property name="justify">center</property>
+                            <property name="wrap">True</property>
                             <attributes>
                               <attribute name="underline" value="True"/>
                             </attributes>
                           </object>
                         </child>
                         <child>
-                          <object class="GtkLabel">
+                          <object class="GtkLabel" id="label_mark13">
                             <property name="width_request">112</property>
                             <property name="height_request">331</property>
                             <property name="visible">True</property>
@@ -614,44 +650,6 @@
                         <property name="x">1456</property>
                       </packing>
                     </child>
-                    <child>
-                      <object class="GtkFixed">
-                        <property name="width_request">100</property>
-                        <property name="height_request">80</property>
-                        <property name="visible">True</property>
-                        <property name="can_focus">False</property>
-                        <child>
-                          <object class="GtkLabel">
-                            <property name="width_request">112</property>
-                            <property name="height_request">40</property>
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="label" translatable="yes">Matiere</property>
-                            <attributes>
-                              <attribute name="underline" value="True"/>
-                            </attributes>
-                          </object>
-                        </child>
-                        <child>
-                          <object class="GtkLabel">
-                            <property name="width_request">112</property>
-                            <property name="height_request">331</property>
-                            <property name="visible">True</property>
-                            <property name="can_focus">False</property>
-                            <property name="label" translatable="yes">Note</property>
-                            <attributes>
-                              <attribute name="style" value="italic"/>
-                            </attributes>
-                          </object>
-                          <packing>
-                            <property name="y">40</property>
-                          </packing>
-                        </child>
-                      </object>
-                      <packing>
-                        <property name="x">1568</property>
-                      </packing>
-                    </child>
                   </object>
                   <packing>
                     <property name="x">54</property>
@@ -659,7 +657,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkFixed">
+                  <object class="GtkFixed" id="windows_result0">
                     <property name="width_request">1666</property>
                     <property name="height_request">250</property>
                     <property name="visible">True</property>
@@ -674,7 +672,7 @@
                       </object>
                     </child>
                     <child>
-                      <object class="GtkButton">
+                      <object class="GtkButton" id="button_result0">
                         <property name="label" translatable="yes">Passage</property>
                         <property name="width_request">250</property>
                         <property name="height_request">79</property>
@@ -688,7 +686,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkButton">
+                      <object class="GtkButton" id="button_result1">
                         <property name="label" translatable="yes">Rattrapage</property>
                         <property name="width_request">250</property>
                         <property name="height_request">79</property>
@@ -703,7 +701,7 @@
                       </packing>
                     </child>
                     <child>
-                      <object class="GtkButton">
+                      <object class="GtkButton" id="button_result2">
                         <property name="label" translatable="yes">Redoublement</property>
                         <property name="width_request">250</property>
                         <property name="height_request">79</property>
@@ -726,18 +724,1422 @@
               </object>
               <packing>
                 <property name="name">page0</property>
-                <property name="title" translatable="yes">Eleve 1</property>
+                <property name="title" translatable="yes">LEBLANC BONSOU Mike Jason</property>
+                <property name="needs_attention">True</property>
               </packing>
             </child>
             <child>
               <object class="GtkFixed">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <child>
+                  <object class="GtkFixed" id="windows_stack1">
+                    <property name="width_request">100</property>
+                    <property name="height_request">80</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="resize_mode">immediate</property>
+                    <child>
+                      <object class="GtkImage">
+                        <property name="width_request">231</property>
+                        <property name="height_request">260</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="pixbuf">img/aurélien.jpg</property>
+                        <property name="icon_size">2</property>
+                      </object>
+                      <packing>
+                        <property name="x">55</property>
+                        <property name="y">127</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="name_student1">
+                        <property name="width_request">100</property>
+                        <property name="height_request">80</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">PRUDHOMME</property>
+                      </object>
+                      <packing>
+                        <property name="x">306</property>
+                        <property name="y">171</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="surname_student1">
+                        <property name="width_request">100</property>
+                        <property name="height_request">80</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Aurélien</property>
+                      </object>
+                      <packing>
+                        <property name="x">304</property>
+                        <property name="y">192</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="class_student1">
+                        <property name="width_request">100</property>
+                        <property name="height_request">80</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">2ESGI2</property>
+                      </object>
+                      <packing>
+                        <property name="x">303</property>
+                        <property name="y">251</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkFixed" id="windows_result1">
+                        <property name="width_request">32</property>
+                        <property name="height_request">32</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkEntry">
+                            <property name="width_request">1366</property>
+                            <property name="height_request">250</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="placeholder_text" translatable="yes">Mettre une appréciation à l'élève...</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkButton">
+                            <property name="label" translatable="yes">Passage</property>
+                            <property name="width_request">250</property>
+                            <property name="height_request">79</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <signal name="clicked" handler="button_result1" swapped="no"/>
+                          </object>
+                          <packing>
+                            <property name="x">1400</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton">
+                            <property name="label" translatable="yes">Rattrapage</property>
+                            <property name="width_request">250</property>
+                            <property name="height_request">79</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <signal name="clicked" handler="button_result1" swapped="no"/>
+                          </object>
+                          <packing>
+                            <property name="x">1400</property>
+                            <property name="y">84</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton">
+                            <property name="label" translatable="yes">Redoublement</property>
+                            <property name="width_request">250</property>
+                            <property name="height_request">79</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <signal name="clicked" handler="button_result1" swapped="no"/>
+                          </object>
+                          <packing>
+                            <property name="x">1400</property>
+                            <property name="y">167</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="x">54</property>
+                        <property name="y">798</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkFixed">
+                        <property name="width_request">32</property>
+                        <property name="height_request">32</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkFixed">
+                            <property name="width_request">32</property>
+                            <property name="height_request">32</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkLabel" id="label_course14">
+                                <property name="width_request">125</property>
+                                <property name="height_request">100</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Matiere</property>
+                                <property name="justify">center</property>
+                                <property name="wrap">True</property>
+                                <attributes>
+                                  <attribute name="underline" value="True"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="label_mark14">
+                                <property name="width_request">112</property>
+                                <property name="height_request">331</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Note</property>
+                                <attributes>
+                                  <attribute name="style" value="italic"/>
+                                </attributes>
+                              </object>
+                              <packing>
+                                <property name="y">40</property>
+                              </packing>
+                            </child>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkFixed">
+                            <property name="width_request">32</property>
+                            <property name="height_request">32</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkLabel" id="label_course15">
+                                <property name="width_request">125</property>
+                                <property name="height_request">100</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Matiere</property>
+                                <property name="justify">center</property>
+                                <property name="wrap">True</property>
+                                <attributes>
+                                  <attribute name="underline" value="True"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="label_mark15">
+                                <property name="width_request">112</property>
+                                <property name="height_request">331</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Note</property>
+                                <attributes>
+                                  <attribute name="style" value="italic"/>
+                                </attributes>
+                              </object>
+                              <packing>
+                                <property name="y">40</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="x">112</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkFixed">
+                            <property name="width_request">32</property>
+                            <property name="height_request">32</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkLabel" id="label_course16">
+                                <property name="width_request">125</property>
+                                <property name="height_request">100</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Matiere</property>
+                                <property name="justify">center</property>
+                                <property name="wrap">True</property>
+                                <attributes>
+                                  <attribute name="underline" value="True"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="label_mark16">
+                                <property name="width_request">112</property>
+                                <property name="height_request">331</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Note</property>
+                                <attributes>
+                                  <attribute name="style" value="italic"/>
+                                </attributes>
+                              </object>
+                              <packing>
+                                <property name="y">40</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="x">224</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkFixed">
+                            <property name="width_request">32</property>
+                            <property name="height_request">32</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkLabel" id="label_course17">
+                                <property name="width_request">120</property>
+                                <property name="height_request">100</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Matiere</property>
+                                <property name="justify">center</property>
+                                <property name="wrap">True</property>
+                                <attributes>
+                                  <attribute name="underline" value="True"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="label_mark17">
+                                <property name="width_request">112</property>
+                                <property name="height_request">331</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Note</property>
+                                <attributes>
+                                  <attribute name="style" value="italic"/>
+                                </attributes>
+                              </object>
+                              <packing>
+                                <property name="y">40</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="x">336</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkFixed">
+                            <property name="width_request">32</property>
+                            <property name="height_request">32</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkLabel" id="label_course18">
+                                <property name="width_request">125</property>
+                                <property name="height_request">100</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Matiere</property>
+                                <property name="justify">center</property>
+                                <property name="wrap">True</property>
+                                <attributes>
+                                  <attribute name="underline" value="True"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="label_mark18">
+                                <property name="width_request">112</property>
+                                <property name="height_request">331</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Note</property>
+                                <attributes>
+                                  <attribute name="style" value="italic"/>
+                                </attributes>
+                              </object>
+                              <packing>
+                                <property name="y">40</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="x">448</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkFixed">
+                            <property name="width_request">32</property>
+                            <property name="height_request">32</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkLabel" id="label_course19">
+                                <property name="width_request">120</property>
+                                <property name="height_request">100</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Matiere</property>
+                                <property name="justify">center</property>
+                                <property name="wrap">True</property>
+                                <attributes>
+                                  <attribute name="underline" value="True"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="label_mark19">
+                                <property name="width_request">112</property>
+                                <property name="height_request">331</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Note</property>
+                                <attributes>
+                                  <attribute name="style" value="italic"/>
+                                </attributes>
+                              </object>
+                              <packing>
+                                <property name="y">40</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="x">560</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkFixed">
+                            <property name="width_request">32</property>
+                            <property name="height_request">32</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkLabel" id="label_course20">
+                                <property name="width_request">120</property>
+                                <property name="height_request">100</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Matiere</property>
+                                <property name="justify">center</property>
+                                <property name="wrap">True</property>
+                                <attributes>
+                                  <attribute name="underline" value="True"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="label_mark20">
+                                <property name="width_request">112</property>
+                                <property name="height_request">331</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Note</property>
+                                <attributes>
+                                  <attribute name="style" value="italic"/>
+                                </attributes>
+                              </object>
+                              <packing>
+                                <property name="y">40</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="x">672</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkFixed">
+                            <property name="width_request">32</property>
+                            <property name="height_request">32</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkLabel" id="label_course21">
+                                <property name="width_request">120</property>
+                                <property name="height_request">100</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Matiere</property>
+                                <property name="justify">center</property>
+                                <property name="wrap">True</property>
+                                <attributes>
+                                  <attribute name="underline" value="True"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="label_mark21">
+                                <property name="width_request">112</property>
+                                <property name="height_request">331</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Note</property>
+                                <attributes>
+                                  <attribute name="style" value="italic"/>
+                                </attributes>
+                              </object>
+                              <packing>
+                                <property name="y">40</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="x">784</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkFixed">
+                            <property name="width_request">32</property>
+                            <property name="height_request">32</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkLabel" id="label_course22">
+                                <property name="width_request">120</property>
+                                <property name="height_request">100</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Matiere</property>
+                                <property name="justify">center</property>
+                                <property name="wrap">True</property>
+                                <attributes>
+                                  <attribute name="underline" value="True"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="label_mark22">
+                                <property name="width_request">112</property>
+                                <property name="height_request">331</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Note</property>
+                                <attributes>
+                                  <attribute name="style" value="italic"/>
+                                </attributes>
+                              </object>
+                              <packing>
+                                <property name="y">40</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="x">896</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkFixed">
+                            <property name="width_request">32</property>
+                            <property name="height_request">32</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkLabel" id="label_course23">
+                                <property name="width_request">120</property>
+                                <property name="height_request">100</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Matiere</property>
+                                <property name="justify">center</property>
+                                <property name="wrap">True</property>
+                                <attributes>
+                                  <attribute name="underline" value="True"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="label_mark23">
+                                <property name="width_request">112</property>
+                                <property name="height_request">331</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Note</property>
+                                <attributes>
+                                  <attribute name="style" value="italic"/>
+                                </attributes>
+                              </object>
+                              <packing>
+                                <property name="y">40</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="x">1008</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkFixed">
+                            <property name="width_request">32</property>
+                            <property name="height_request">32</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkLabel" id="label_course24">
+                                <property name="width_request">120</property>
+                                <property name="height_request">100</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Matiere</property>
+                                <property name="justify">center</property>
+                                <property name="wrap">True</property>
+                                <attributes>
+                                  <attribute name="underline" value="True"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="label_mark24">
+                                <property name="width_request">112</property>
+                                <property name="height_request">331</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Note</property>
+                                <attributes>
+                                  <attribute name="style" value="italic"/>
+                                </attributes>
+                              </object>
+                              <packing>
+                                <property name="y">40</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="x">1120</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkFixed">
+                            <property name="width_request">32</property>
+                            <property name="height_request">32</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkLabel" id="label_course25">
+                                <property name="width_request">120</property>
+                                <property name="height_request">100</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Matiere</property>
+                                <property name="justify">center</property>
+                                <property name="wrap">True</property>
+                                <attributes>
+                                  <attribute name="underline" value="True"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="label_mark25">
+                                <property name="width_request">112</property>
+                                <property name="height_request">331</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Note</property>
+                                <attributes>
+                                  <attribute name="style" value="italic"/>
+                                </attributes>
+                              </object>
+                              <packing>
+                                <property name="y">40</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="x">1232</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkFixed">
+                            <property name="width_request">32</property>
+                            <property name="height_request">32</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkLabel" id="label_course26">
+                                <property name="width_request">120</property>
+                                <property name="height_request">100</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Matiere</property>
+                                <property name="justify">center</property>
+                                <property name="wrap">True</property>
+                                <attributes>
+                                  <attribute name="underline" value="True"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="label_mark26">
+                                <property name="width_request">112</property>
+                                <property name="height_request">331</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Note</property>
+                                <attributes>
+                                  <attribute name="style" value="italic"/>
+                                </attributes>
+                              </object>
+                              <packing>
+                                <property name="y">40</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="x">1344</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkFixed">
+                            <property name="width_request">32</property>
+                            <property name="height_request">32</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkLabel" id="label_course27">
+                                <property name="width_request">120</property>
+                                <property name="height_request">100</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Matiere</property>
+                                <property name="justify">center</property>
+                                <property name="wrap">True</property>
+                                <attributes>
+                                  <attribute name="underline" value="True"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="label_mark27">
+                                <property name="width_request">112</property>
+                                <property name="height_request">331</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Note</property>
+                                <attributes>
+                                  <attribute name="style" value="italic"/>
+                                </attributes>
+                              </object>
+                              <packing>
+                                <property name="y">40</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="x">1456</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="x">54</property>
+                        <property name="y">407</property>
+                      </packing>
+                    </child>
+                  </object>
+                </child>
               </object>
               <packing>
                 <property name="name">page1</property>
-                <property name="title" translatable="yes">Eleve 2</property>
+                <property name="title" translatable="yes">PRUDHOMME Aurélien</property>
                 <property name="position">1</property>
+              </packing>
+            </child>
+            <child>
+              <object class="GtkFixed">
+                <property name="visible">True</property>
+                <property name="can_focus">False</property>
+                <child>
+                  <object class="GtkFixed" id="windows_stack2">
+                    <property name="width_request">100</property>
+                    <property name="height_request">80</property>
+                    <property name="visible">True</property>
+                    <property name="can_focus">False</property>
+                    <property name="resize_mode">immediate</property>
+                    <child>
+                      <object class="GtkImage">
+                        <property name="width_request">231</property>
+                        <property name="height_request">260</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="pixbuf">img/valentin.jpg</property>
+                        <property name="icon_size">2</property>
+                      </object>
+                      <packing>
+                        <property name="x">55</property>
+                        <property name="y">127</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="name_student2">
+                        <property name="width_request">100</property>
+                        <property name="height_request">80</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">BOUR</property>
+                      </object>
+                      <packing>
+                        <property name="x">306</property>
+                        <property name="y">171</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="surname_student2">
+                        <property name="width_request">100</property>
+                        <property name="height_request">80</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">Valentin</property>
+                      </object>
+                      <packing>
+                        <property name="x">307</property>
+                        <property name="y">192</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel" id="class_student2">
+                        <property name="width_request">100</property>
+                        <property name="height_request">80</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <property name="label" translatable="yes">2ESGI2</property>
+                      </object>
+                      <packing>
+                        <property name="x">303</property>
+                        <property name="y">251</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkFixed">
+                        <property name="width_request">32</property>
+                        <property name="height_request">32</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkFixed">
+                            <property name="width_request">32</property>
+                            <property name="height_request">32</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkLabel" id="label_course28">
+                                <property name="width_request">125</property>
+                                <property name="height_request">100</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Matiere</property>
+                                <property name="justify">center</property>
+                                <property name="wrap">True</property>
+                                <attributes>
+                                  <attribute name="underline" value="True"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="label_mark28">
+                                <property name="width_request">112</property>
+                                <property name="height_request">331</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Note</property>
+                                <attributes>
+                                  <attribute name="style" value="italic"/>
+                                </attributes>
+                              </object>
+                              <packing>
+                                <property name="y">40</property>
+                              </packing>
+                            </child>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkFixed">
+                            <property name="width_request">32</property>
+                            <property name="height_request">32</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkLabel" id="label_course29">
+                                <property name="width_request">125</property>
+                                <property name="height_request">100</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Matiere</property>
+                                <property name="justify">center</property>
+                                <property name="wrap">True</property>
+                                <attributes>
+                                  <attribute name="underline" value="True"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="label_mark29">
+                                <property name="width_request">112</property>
+                                <property name="height_request">331</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Note</property>
+                                <attributes>
+                                  <attribute name="style" value="italic"/>
+                                </attributes>
+                              </object>
+                              <packing>
+                                <property name="y">40</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="x">112</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkFixed">
+                            <property name="width_request">32</property>
+                            <property name="height_request">32</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkLabel" id="label_course30">
+                                <property name="width_request">125</property>
+                                <property name="height_request">100</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Matiere</property>
+                                <property name="justify">center</property>
+                                <property name="wrap">True</property>
+                                <attributes>
+                                  <attribute name="underline" value="True"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="label_mark30">
+                                <property name="width_request">112</property>
+                                <property name="height_request">331</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Note</property>
+                                <attributes>
+                                  <attribute name="style" value="italic"/>
+                                </attributes>
+                              </object>
+                              <packing>
+                                <property name="y">40</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="x">224</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkFixed">
+                            <property name="width_request">32</property>
+                            <property name="height_request">32</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkLabel" id="label_course31">
+                                <property name="width_request">120</property>
+                                <property name="height_request">100</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Matiere</property>
+                                <property name="justify">center</property>
+                                <property name="wrap">True</property>
+                                <attributes>
+                                  <attribute name="underline" value="True"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="label_mark31">
+                                <property name="width_request">112</property>
+                                <property name="height_request">331</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Note</property>
+                                <attributes>
+                                  <attribute name="style" value="italic"/>
+                                </attributes>
+                              </object>
+                              <packing>
+                                <property name="y">40</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="x">336</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkFixed">
+                            <property name="width_request">32</property>
+                            <property name="height_request">32</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkLabel" id="label_course32">
+                                <property name="width_request">125</property>
+                                <property name="height_request">100</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Matiere</property>
+                                <property name="justify">center</property>
+                                <property name="wrap">True</property>
+                                <attributes>
+                                  <attribute name="underline" value="True"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="label_mark32">
+                                <property name="width_request">112</property>
+                                <property name="height_request">331</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Note</property>
+                                <attributes>
+                                  <attribute name="style" value="italic"/>
+                                </attributes>
+                              </object>
+                              <packing>
+                                <property name="y">40</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="x">448</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkFixed">
+                            <property name="width_request">32</property>
+                            <property name="height_request">32</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkLabel" id="label_course33">
+                                <property name="width_request">120</property>
+                                <property name="height_request">100</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Matiere</property>
+                                <property name="justify">center</property>
+                                <property name="wrap">True</property>
+                                <attributes>
+                                  <attribute name="underline" value="True"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="label_mark33">
+                                <property name="width_request">112</property>
+                                <property name="height_request">331</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Note</property>
+                                <attributes>
+                                  <attribute name="style" value="italic"/>
+                                </attributes>
+                              </object>
+                              <packing>
+                                <property name="y">40</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="x">560</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkFixed">
+                            <property name="width_request">32</property>
+                            <property name="height_request">32</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkLabel" id="label_course34">
+                                <property name="width_request">120</property>
+                                <property name="height_request">100</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Matiere</property>
+                                <property name="justify">center</property>
+                                <property name="wrap">True</property>
+                                <attributes>
+                                  <attribute name="underline" value="True"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="label_mark34">
+                                <property name="width_request">112</property>
+                                <property name="height_request">331</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Note</property>
+                                <attributes>
+                                  <attribute name="style" value="italic"/>
+                                </attributes>
+                              </object>
+                              <packing>
+                                <property name="y">40</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="x">672</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkFixed">
+                            <property name="width_request">32</property>
+                            <property name="height_request">32</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkLabel" id="label_course35">
+                                <property name="width_request">120</property>
+                                <property name="height_request">100</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Matiere</property>
+                                <property name="justify">center</property>
+                                <property name="wrap">True</property>
+                                <attributes>
+                                  <attribute name="underline" value="True"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="label_mark35">
+                                <property name="width_request">112</property>
+                                <property name="height_request">331</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Note</property>
+                                <attributes>
+                                  <attribute name="style" value="italic"/>
+                                </attributes>
+                              </object>
+                              <packing>
+                                <property name="y">40</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="x">784</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkFixed">
+                            <property name="width_request">32</property>
+                            <property name="height_request">32</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkLabel" id="label_course36">
+                                <property name="width_request">120</property>
+                                <property name="height_request">100</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Matiere</property>
+                                <property name="justify">center</property>
+                                <property name="wrap">True</property>
+                                <attributes>
+                                  <attribute name="underline" value="True"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="label_mark36">
+                                <property name="width_request">112</property>
+                                <property name="height_request">331</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Note</property>
+                                <attributes>
+                                  <attribute name="style" value="italic"/>
+                                </attributes>
+                              </object>
+                              <packing>
+                                <property name="y">40</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="x">896</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkFixed">
+                            <property name="width_request">32</property>
+                            <property name="height_request">32</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkLabel" id="label_course37">
+                                <property name="width_request">120</property>
+                                <property name="height_request">100</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Matiere</property>
+                                <property name="justify">center</property>
+                                <property name="wrap">True</property>
+                                <attributes>
+                                  <attribute name="underline" value="True"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="label_mark37">
+                                <property name="width_request">112</property>
+                                <property name="height_request">331</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Note</property>
+                                <attributes>
+                                  <attribute name="style" value="italic"/>
+                                </attributes>
+                              </object>
+                              <packing>
+                                <property name="y">40</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="x">1008</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkFixed">
+                            <property name="width_request">32</property>
+                            <property name="height_request">32</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkLabel" id="label_course38">
+                                <property name="width_request">120</property>
+                                <property name="height_request">100</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Matiere</property>
+                                <property name="justify">center</property>
+                                <property name="wrap">True</property>
+                                <attributes>
+                                  <attribute name="underline" value="True"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="label_mark38">
+                                <property name="width_request">112</property>
+                                <property name="height_request">331</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Note</property>
+                                <attributes>
+                                  <attribute name="style" value="italic"/>
+                                </attributes>
+                              </object>
+                              <packing>
+                                <property name="y">40</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="x">1120</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkFixed">
+                            <property name="width_request">32</property>
+                            <property name="height_request">32</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkLabel" id="label_course39">
+                                <property name="width_request">120</property>
+                                <property name="height_request">100</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Matiere</property>
+                                <property name="justify">center</property>
+                                <property name="wrap">True</property>
+                                <attributes>
+                                  <attribute name="underline" value="True"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="label_mark39">
+                                <property name="width_request">112</property>
+                                <property name="height_request">331</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Note</property>
+                                <attributes>
+                                  <attribute name="style" value="italic"/>
+                                </attributes>
+                              </object>
+                              <packing>
+                                <property name="y">40</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="x">1232</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkFixed">
+                            <property name="width_request">32</property>
+                            <property name="height_request">32</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkLabel" id="label_course40">
+                                <property name="width_request">120</property>
+                                <property name="height_request">100</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Matiere</property>
+                                <property name="justify">center</property>
+                                <property name="wrap">True</property>
+                                <attributes>
+                                  <attribute name="underline" value="True"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="label_mark40">
+                                <property name="width_request">112</property>
+                                <property name="height_request">331</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Note</property>
+                                <attributes>
+                                  <attribute name="style" value="italic"/>
+                                </attributes>
+                              </object>
+                              <packing>
+                                <property name="y">40</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="x">1344</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkFixed">
+                            <property name="width_request">32</property>
+                            <property name="height_request">32</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">False</property>
+                            <child>
+                              <object class="GtkLabel" id="label_course41">
+                                <property name="width_request">120</property>
+                                <property name="height_request">100</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Matiere</property>
+                                <property name="justify">center</property>
+                                <property name="wrap">True</property>
+                                <attributes>
+                                  <attribute name="underline" value="True"/>
+                                </attributes>
+                              </object>
+                            </child>
+                            <child>
+                              <object class="GtkLabel" id="label_mark41">
+                                <property name="width_request">112</property>
+                                <property name="height_request">331</property>
+                                <property name="visible">True</property>
+                                <property name="can_focus">False</property>
+                                <property name="label" translatable="yes">Note</property>
+                                <attributes>
+                                  <attribute name="style" value="italic"/>
+                                </attributes>
+                              </object>
+                              <packing>
+                                <property name="y">40</property>
+                              </packing>
+                            </child>
+                          </object>
+                          <packing>
+                            <property name="x">1456</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="x">54</property>
+                        <property name="y">407</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkFixed" id="windows_result2">
+                        <property name="width_request">32</property>
+                        <property name="height_request">32</property>
+                        <property name="visible">True</property>
+                        <property name="can_focus">False</property>
+                        <child>
+                          <object class="GtkEntry">
+                            <property name="width_request">1366</property>
+                            <property name="height_request">250</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="placeholder_text" translatable="yes">Mettre une appréciation à l'élève...</property>
+                          </object>
+                        </child>
+                        <child>
+                          <object class="GtkButton">
+                            <property name="label" translatable="yes">Passage</property>
+                            <property name="width_request">250</property>
+                            <property name="height_request">79</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <signal name="clicked" handler="button_result2" swapped="no"/>
+                          </object>
+                          <packing>
+                            <property name="x">1400</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton">
+                            <property name="label" translatable="yes">Rattrapage</property>
+                            <property name="width_request">250</property>
+                            <property name="height_request">79</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <signal name="clicked" handler="button_result2" swapped="no"/>
+                          </object>
+                          <packing>
+                            <property name="x">1400</property>
+                            <property name="y">84</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton">
+                            <property name="label" translatable="yes">Redoublement</property>
+                            <property name="width_request">250</property>
+                            <property name="height_request">79</property>
+                            <property name="visible">True</property>
+                            <property name="can_focus">True</property>
+                            <property name="receives_default">True</property>
+                            <signal name="clicked" handler="button_result2" swapped="no"/>
+                          </object>
+                          <packing>
+                            <property name="x">1400</property>
+                            <property name="y">167</property>
+                          </packing>
+                        </child>
+                      </object>
+                      <packing>
+                        <property name="x">54</property>
+                        <property name="y">798</property>
+                      </packing>
+                    </child>
+                  </object>
+                </child>
+              </object>
+              <packing>
+                <property name="name">page2</property>
+                <property name="title" translatable="yes">BOUR Valentin</property>
+                <property name="position">2</property>
               </packing>
             </child>
           </object>
@@ -752,7 +2154,7 @@
             <property name="visible">True</property>
             <property name="can_focus">False</property>
             <property name="orientation">vertical</property>
-            <property name="icon_size">2</property>
+            <property name="icon_size">3</property>
             <property name="stack">stack</property>
           </object>
         </child>
